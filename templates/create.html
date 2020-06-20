@@ -6,34 +6,34 @@
 <div class="container">
 <h1>投稿作成</h1>
 <form action='' method='POST' enctype="multipart/form-data">{% csrf_token %}
-    <div class="form-group row">
+    <div class="form-group">
         <label class="col-sm-2 control-label"><h3>タイトル:</h3></label>
-        <div class="col-">
-            <input type='text' class="label label-danger" name='title'>
+        <div class="col-10">
+            <input type='text' class="label label-control" name='title'>
         </div>
     </div>
 
-    <div class="form-group row">
+    <div class="form-group">
         <label class="col-sm-2 control-label"><h3>内容:</h3></label>
-        <div class="col-">
+        <div class="col-10">
             <input type='text' class="form-control" name='content'>
         </div>
     </div>
         
-    <div class="form-group row">
+    <div class="form-group">
         <label class="col-sm-2 control-label"><h3>画像:</h3></label>
-        <div class="col-">
+        <div class="col-10">
             <input type='file' class="form-control" name='images'>
         </div>
     </div>
         <input type='hidden' class="form-control" name='author' value='{{ user.username }}'>
         
-    <div class="form-group row">
+    <div class="form-group">
         <input type='submit' class="btn btn-outline-primary" value='作成する'>
     </div>
 </form>
 </div>
 {% else %}
-ログインしてください
+<div id="error_explanation" class="alert alert-warning">ログインしてください</div>
 {% endif %}
 {% endblock content %}
